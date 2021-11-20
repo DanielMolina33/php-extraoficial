@@ -1,0 +1,64 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
+
+:root {
+  --width: 250px
+}
+
+.offcanvas-width {
+  width: var(--width);
+}
+
+.container-no-margin {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.container-offset-right {
+  width: calc(100% - var(--width));
+  transform: translateX(var(--width));
+  transition: all .3s ease-in-out;
+}
+
+.container-offset-left {
+  width: 100%;
+  transform: translateX(calc(var(--width) - var(--width)));
+  transition: all .3s ease-in-out;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.bg-secondary-custom {
+  background-color: #e9ecf4;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.profile__image {
+  width: 100%;
+  height: 100%;
+}
+
+.user-menu-open:hover > .user-menu {
+  display: block;
+}
+
+.user-menu {
+  display: none;
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  padding: 5px;
+  width: 100%;
+}
