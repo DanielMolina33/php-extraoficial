@@ -5,13 +5,14 @@
 	<title>Nueva categoria</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../../css/contentBackground.css">
 	<script type="text/javascript">
 		function volver() {
 			window.history.back();
 		}
 	</script>
 </head>
-<body>             
+<body class="bg-secondary-custom">             
 	<div class="container">	
 		<h1 class="text-center">Nueva categoria</h1>
 		<form action="cod/newcategoria.php" method="GET">

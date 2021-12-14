@@ -1,3 +1,3 @@
-# Ecommerce - proyecto formativo SENA
+# PHP-EXTRAOFICIAL
 
-Realizando pruebas
+En este repositorio se encuentran todos los módulos unificados
