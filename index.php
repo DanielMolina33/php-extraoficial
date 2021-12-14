@@ -17,39 +17,41 @@
       <div class="mb-2">
         <h6 class="text-white fs-13">Navegación</h6>
         <ul class="list-group">
-          <li class="list-group-item border-0 bg-transparent fs-14">
-            <a href="#" class="text-decoration-none text-white"><i class="bi bi-house me-2"></i>Home</a>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-house me-1"></i>
+            <a href="#" class="text-decoration-none text-white">Home</a>
           </li>
-          <li class="list-group-item border-0 bg-transparent fs-14">
-            <a href="#" class="text-decoration-none text-white"><i class="bi bi-cart me-2"></i>Ordenes de compra</a>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-cart me-1"></i>
+            <a href="#" class="text-decoration-none text-white">Ordenes de compra</a>
           </li>
-          <li class="list-group-item border-0 bg-transparent fs-14">
-            <a href="#" class="text-decoration-none text-white"><i class="bi bi-app me-2"></i>Another option</a>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-columns-gap me-1"></i>
+            <a href="./modules/categories/" class="text-decoration-none text-white" onclick="showContent(event)">Categorias</a>
           </li>
         </ul>
       </div>
       <div class="mb-2">
         <h6 class="text-white fs-13">Configuración</h6>
         <ul class="list-group">
-          <li class="list-group-item border-0 bg-transparent fs-14">
-            <a href="#" class="text-decoration-none text-white"><i class="bi bi-app me-2"></i>table 1</a>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-app me-1"></i>
+            <a href="#" class="text-decoration-none text-white">table 1</a>
           </li>
-          <li class="list-group-item border-0 bg-transparent fs-14">
-            <a href="#" class="text-decoration-none text-white"><i class="bi bi-app me-2"></i>table 2</a>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+          <i class="bi bi-app me-1"></i>
+            <a href="#" class="text-decoration-none text-white">table 2</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="container-fluid container-no-margin container-offset-right" id="mainContent">
+  <div class="container-fluid container-no-margin container-offset-right vh-100" id="mainContent">
     <header class="row">
       <div class="col">
         <a class="text-decoration-none text-dark fs-2" data-bs-toggle="offcanvas" href="#menuOptions" role="button" aria-controls="menuOptions" id="menuOptionsToggle">
           <i class="bi bi-list"></i>
         </a>
-      </div>
-      <div class="col d-flex justify-content-center align-items-center">
-        <a href="/Ecommerce-admin" class="text-decoration-none text-dark">Ecommerce Admin</a>
       </div>
       <div class="col d-flex justify-content-end align-items-center pt-2 col-user-menu">
         <div class="d-flex align-items-center position-relative user-menu-open pb-1">
@@ -70,7 +72,13 @@
         </div>
       </div>
     </header>
+    <section class="h-100 w-100">
+      <iframe class="h-100 w-100 m-0" id="iframe">
+
+      </iframe>
+    </section>
   </div>
   <script src="./js/showMenu.js"></script>
+  <script src="./js/showContent.js"></script>
 </body>
 </html>
