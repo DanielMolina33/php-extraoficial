@@ -36,7 +36,7 @@
           <div class="mb-3">
             <label for="product" class="w-100">
 			  <select  required="required" id="estado" class="form-select" name="estado">
-				<option selected value="0"> Elige una opción </option>
+				<option selected value="0"> Elige un estado </option>
 				<option value="8">Activo</option> 
 				<option value="9">Inactivo</option>
 				</select> 
@@ -68,8 +68,5 @@
         </form>
       </div>  
     </section>
-
-
-
 </body>
 </html
