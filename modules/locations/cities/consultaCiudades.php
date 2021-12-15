@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../css/contentBackground.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -17,12 +18,7 @@
 		}
 	</style>
 </head>
-<body>
-	<!-- <div class="h-100 d-flex justify-content-center align-items-center" id="loader">
-		<div class="spinner-border text-dark" role="status">
-			<span class="visually-hidden">Loading...</span>
-		</div>
-	</div> -->
+<body class="bg-secondary-custom">
 	<?php
 		require 'Ciudades.php';	
 
@@ -58,9 +54,9 @@
 			echo "</thead>";
 
 			while ($datos = mysqli_fetch_assoc($resultado)){
-				echo "<tr>";
+				echo "<tr class='bg-transparent'>";
 					foreach ($datos as $key => $value) {
-						echo "<td>".$value."</td>";
+						echo "<td >".$value."</td>";
 					}
 					echo "<td>
 						<form action='editarCiudades.php' method='GET'>
