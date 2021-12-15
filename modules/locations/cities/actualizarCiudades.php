@@ -6,9 +6,9 @@
 	
 # *************** Recibe los datos del formulario ***************
 
-	$datos[0] = $_GET['nombre'];
-	$datos[1] = $_GET['departamento'];
-	$datos[2] = $_GET['idCiudades'];
+	$datos[0] = $_POST['nombre'];
+	$datos[1] = $_POST['departamento'];
+	$datos[2] = $_POST['idCiudades'];
 
 
 	$general = new Ciudades();

@@ -4,36 +4,75 @@
 	<meta charset="utf-8">
 	<title>Departamentos</title>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../../css/contentBackground.css">
 	<script type="text/javascript">
 		function volver() {
 			window.history.back();
 		}
 	</script>
 </head>
-<body> 
-<?php
-        require 'Ciudades.php';
-        $id = $_GET['idCiudades'];
-        $pte = new Ciudades();
-        $datos = $pte->editar($id);
-        $datos = mysqli_fetch_assoc($datos);
-		
-    ?>                     
-	<div class="container">	
-		<h1 class="text-center">Ciudades</h1>
-		<form action="actualizarCiudades.php" method="GET">
-			Digite su nombre: <br><input class="m-2" type="text" name="nombre" placeholder="Nombre" value="<?php echo $datos['nombre']; ?>"><br>
-			Usuario modifica: <br><input class="m-2" type="number" name="usuarioModifica" placeholder="usuario modifica"value="<?php echo $datos['usuarioModifica']; ?>"><br>
-			Digite la fecha de creaccion: <br><input class="m-2" type="date" name="fechaCreacion" placeholder="fecha de creacion"value="<?php echo $datos['fechaCreacion']; ?>"><br>
-			Digite la fecha de modificacion: <br><input class="m-2" type="date" name="fechaModificacion" placeholder="fecha de modificacion" value="<?php echo $datos['fechaModificacion']; ?>"><br>
-			Digite el ID del departamento: <br><input class="m-2" type="number" name="departamento" placeholder="ID del departamento" value="<?php echo $datos['departamento']; ?>"><br>
-			<input type="hidden" name="idCiudades" value="<?php echo $datos['idCiudades']; ?>"><br>
-			<input class="m-2" type="submit" name="">
-		</form><br>
-	</div>
+<body class="bg-secondary-custom"> 
 	<?php
-		if(isset($_GET['msn'])){
-			echo $_GET['msn'];
+    require 'Ciudades.php';
+    $id = $_GET['idCiudades'];
+    $pte = new Ciudades();
+    $datos = $pte->editar($id);
+    $datos = mysqli_fetch_assoc($datos);
+  ?> 
+
+	<div class="row justify-content-start mt-5 ms-5">
+	<a href="../index.php" title="Atrás" class="fs-4 text-decoration-none">
+		<img src='../../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
+	</a>
+  </div>        
+  <section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
+    <div class="col-12 col-lg-6 mb-4">
+    	<h3 class="display-4 text-center">Formulario ciudades</h3>
+    </div>
+
+    <div class="col-12 col-lg-6">
+    	<form
+				action="./newCiudades.php"
+				method="GET">
+        <div class="mb-3">
+          <label for="total" class="w-100">
+            <input
+            type="text"
+            required="required"
+        		name="nombre"
+            id="nombre"
+            placeholder="Nombre"
+            class="form-control"
+						value="<?php echo $datos['nombre']; ?>"
+            />
+          </label>
+        </div>
+
+        <div class="mb-3">
+					<label for="departamento" class="w-100">
+						<select name="departamento" required="required" id="departamento" class="form-select">
+							<option value="<?php echo $datos['departamento']; ?>">Departamento</option>
+						</select>
+						<?php require "./consultaDepartamentos.php"; ?>
+					</label>
+				</div>
+
+				<input type="hidden" name="idCiudades" value="<?php echo $datos['idCiudades']; ?>"><br>
+
+        <div class="mb-3">
+          <input type="submit" value="Enviar" class="btn bg-dark text-white w-100"/>
+        </div>
+
+        <div>
+          <input type="reset" value="Borrar" class="btn bg-dark text-white w-100"/>
+        </div>
+      </form>
+    </div>  
+	</section>
+	<?php
+		if(isset($_POST['msn'])){
+			echo $_POST['msn'];
 		}
 	?>
 </body>
