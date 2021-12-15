@@ -25,7 +25,7 @@
 
     <div class="col-12 col-lg-6">
     	<form
-				action="newCiudades.php"
+				action="./newCiudades.php"
 				method="POST">
         <div class="mb-3">
           <label for="total" class="w-100">
@@ -39,6 +39,15 @@
             />
           </label>
         </div>
+
+        <div class="mb-3">
+					<label for="departamento" class="w-100">
+						<select name="departamento" required="required" id="departamento" class="form-select">
+							<option value="">Departamento</option>
+              <?php require "./consultaDepartamentos.php"; ?>
+						</select>
+					</label>
+				</div>
 
         <div class="mb-3">
           <input type="submit" value="Enviar" class="btn bg-dark text-white w-100"/>

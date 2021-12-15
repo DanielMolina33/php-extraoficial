@@ -20,7 +20,7 @@
   </div>        
   <section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
     <div class="col-12 col-lg-6 mb-4">
-    	<h3 class="display-4 text-center">Formulario ciudades</h3>
+    	<h3 class="display-4 text-center">Formulario departamentos</h3>
     </div>
 
     <div class="col-12 col-lg-6">
@@ -39,6 +39,15 @@
             />
           </label>
         </div>
+
+				<div class="mb-3">
+					<label for="pais" class="w-100">
+						<select name="pais" required="required" id="pais" class="form-select">
+							<option value="">Pais</option>
+							<?php require "./consultaPaises.php"; ?>
+						</select>
+					</label>
+				</div>
 
         <div class="mb-3">
           <input type="submit" value="Enviar" class="btn bg-dark text-white w-100"/>

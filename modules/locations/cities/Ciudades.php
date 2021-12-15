@@ -2,12 +2,12 @@
 
     class Ciudades{
 
-        public $nombre, $usuarioModifica, $fechaCreacion, $fechaModificacion, $pais;
+        public $nombre, $usuarioModifica, $departamento;
 
 
         public function __construct(){
             require 'conexion.php';
-            
+            $this->usuarioModifica = "";
         }
 
         public function consultar(){
@@ -22,10 +22,9 @@
         public function guardar(){
             $connect=new Conexion();
             $connect->conectar();
-            $sql = "insert into ciudades (nombre,fechaCreacion ,fechaModificacion, departamento) values ('$this->nombre','$this->fechaCreacion','$this->fechaModificacion',$this->departamento);";
+            $sql = "insert into ciudades (nombre, usuarioModifica, departamento) values ('$this->nombre','$this->usuarioModifica',$this->departamento);";
             $resultado = $connect->ejecutar($sql);
             
-
             $connect->cerrar();
             return $resultado;
         }
@@ -44,12 +43,13 @@
             $connect->conectar();
             $sql = "update ciudades set 
             nombre = '$datos[0]',
-            usuarioModifica = $datos[1],
-            fechaCreacion = '$datos[2]',
-            fechaModificacion = '$datos[3]',
-            departamento = $datos[4]
-            where idCiudades = $datos[5]";
+            usuarioModifica = '$this->usuarioModifica',
+            departamento = $datos[1]
+            where idCiudades = $datos[2]";
             $resultado = $connect->ejecutar($sql);
+
+            echo $sql;
+
             echo $sql;
             $connect->cerrar();
             return $resultado;

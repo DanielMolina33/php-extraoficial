@@ -7,11 +7,8 @@
 # *************** Recibe los datos del formulario ***************
 
 	$datos[0] = $_GET['nombre'];
-	$datos[1] = $_GET['usuarioModifica'];
-	$datos[2] = $_GET['fechaCreacion'];
-	$datos[3] = $_GET['fechaModificacion'];
-	$datos[4] = $_GET['departamento'];
-	$datos[5] = $_GET['idCiudades'];
+	$datos[1] = $_GET['departamento'];
+	$datos[2] = $_GET['idCiudades'];
 
 
 	$general = new Ciudades();
@@ -28,5 +25,5 @@ if ($respuesta == 1){
 
 # *************** Redireccionar ***************
 
-	header('Location: consultaCiudades.php?msn='.$msn);
+	// header('Location: consultaCiudades.php?msn='.$msn);
 ?>
