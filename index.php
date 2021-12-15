@@ -33,6 +33,10 @@
             <i class="bi bi-geo-alt me-1"></i>
             <a href="./modules/locations/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Ubicaciones</a>
           </li>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-shop me-1"></i>
+            <a href="./modules/products/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Productos</a>
+          </li>
         </ul>
       </div>
       <div class="mb-2">
