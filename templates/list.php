@@ -27,47 +27,45 @@
   </style>
 </head>
 <body>
-	<section class="container py-4">
 		<!-- <div class="row justify-content-start">
 			<a href="../../views/menu.php" title="Atrás" class="fs-4 text-decoration-none">👈</a>
 		</div> -->
-		<div class="row justify-content-center mb-4">
-			<div class="col-12 col-lg-6">
-				<h2 class="display-5 text-center">Lorem, ipsum dolor.</h2>
-			</div>
-		</div>
-		<div class="row justify-content-center mb-5">
-			<div class="col-12 col-lg-6">
-        <div class='accordion' id='accordion'>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="testId">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-id" aria-expanded="false" aria-controls="collapse-id">
-                Lorem, ipsum dolor.
-              </button>
-            </h2>
-            <div id="collapse-id" class="accordion-collapse collapse" aria-labelledby="testId" data-bs-parent="#accordion">
-              <div class="accordion-body">
-                <ul class="list-group">
-                  <li class='list-group-item d-flex justify-content-between'>
-                    <span class='text-secondary'>Lorem</span>
-                    Lorem, ipsum.
-                  </li>
-                  <li class='list-group-item d-flex justify-content-between'>
-                    <span class='text-secondary'>Lorem</span>
-                    Lorem, ipsum.
-                  </li>
-                </ul>
-                <!-- <div class="d-flex justify-content-end mt-3">
-                  <a href="#" class="btn btn-success me-2">Editar</a>
-                  <a href="#" onclick="deleteMedicine(event)" class="btn btn-danger">Eliminar</a>
-                </div> -->
-              </div>
+  <div class="row justify-content-center mb-4">
+    <div class="col-12 col-lg-6">
+      <h2 class="display-5 text-center">Lorem, ipsum dolor.</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-5">
+    <div class="col-12 col-lg-6">
+      <div class='accordion' id='accordion'>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="testId">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-id" aria-expanded="false" aria-controls="collapse-id">
+              Lorem, ipsum dolor.
+            </button>
+          </h2>
+          <div id="collapse-id" class="accordion-collapse collapse" aria-labelledby="testId" data-bs-parent="#accordion">
+            <div class="accordion-body">
+              <ul class="list-group">
+                <li class='list-group-item d-flex justify-content-between'>
+                  <span class='text-secondary'>Lorem</span>
+                  Lorem, ipsum.
+                </li>
+                <li class='list-group-item d-flex justify-content-between'>
+                  <span class='text-secondary'>Lorem</span>
+                  Lorem, ipsum.
+                </li>
+              </ul>
+              <!-- <div class="d-flex justify-content-end mt-3">
+                <a href="#" class="btn btn-success me-2">Editar</a>
+                <a href="#" onclick="deleteMedicine(event)" class="btn btn-danger">Eliminar</a>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
-		</div>
-	</section>
+    </div>
+  </div>
   <!-- <script>
     function deleteMedicine(e){
       sn = confirm("¿Realmente desea este medicamento?");

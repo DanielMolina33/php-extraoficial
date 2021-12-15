@@ -27,7 +27,11 @@
           </li>
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-columns-gap me-1"></i>
-            <a href="./modules/categories/" class="text-decoration-none text-white" onclick="showContent(event)">Categorias</a>
+            <a href="./modules/categories/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Categorias</a>
+          </li>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-geo-alt me-1"></i>
+            <a href="./modules/locations/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Ubicaciones</a>
           </li>
         </ul>
       </div>
@@ -74,7 +78,7 @@
     </header>
     <section class="h-100 w-100">
       <iframe class="h-100 w-100 m-0" id="iframe">
-
+        <!-- Modules here -->
       </iframe>
     </section>
   </div>
