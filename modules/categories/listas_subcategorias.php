@@ -60,15 +60,15 @@
 							</button>
 						</form>
 						</td>";
-					echo "<td>
-						<form action='filtrarProductos.php' method='GET'>
-							<input type=hidden name=id value= ".$datos['idSubcategorias'].">
-							<input type=hidden name=nom value= ".$datos['nombre'].">
-							<button class=btn>
-								<img src='img/gonext_103393.ico' width=30px/>
-							</button>
-						</form>
-						</td>";
+					// echo "<td>
+					// 	<form action='#' method='GET'>
+					// 		<input type=hidden name=id value= ".$datos['idSubcategorias'].">
+					// 		<input type=hidden name=nom value= ".$datos['nombre'].">
+					// 		<button class=btn>
+					// 			<img src='img/gonext_103393.ico' width=30px/>
+					// 		</button>
+					// 	</form>
+					// 	</td>";
 				echo "</tr>";
 			}
 			

@@ -48,9 +48,6 @@
             where idCiudades = $datos[2]";
             $resultado = $connect->ejecutar($sql);
 
-            echo $sql;
-
-            echo $sql;
             $connect->cerrar();
             return $resultado;
         }

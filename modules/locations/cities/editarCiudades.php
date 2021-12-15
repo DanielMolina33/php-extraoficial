@@ -33,30 +33,36 @@
 
     <div class="col-12 col-lg-6">
     	<form
-				action="./newCiudades.php"
-				method="GET">
+				action="./actualizarCiudades.php"
+				method="POST">
         <div class="mb-3">
-          <label for="total" class="w-100">
+          <label for="nombre" class="w-100">
             <input
-            type="text"
-            required="required"
-        		name="nombre"
-            id="nombre"
-            placeholder="Nombre"
-            class="form-control"
-						value="<?php echo $datos['nombre']; ?>"
+							type="text"
+							required="required"
+							name="nombre"
+							id="nombre"
+							placeholder="Nombre"
+							class="form-control"
+							value="<?php echo $datos['nombre']; ?>"
             />
           </label>
         </div>
 
         <div class="mb-3">
-					<label for="departamento" class="w-100">
-						<select name="departamento" required="required" id="departamento" class="form-select">
-							<option value="<?php echo $datos['departamento']; ?>">Departamento</option>
-						</select>
-						<?php require "./consultaDepartamentos.php"; ?>
-					</label>
-				</div>
+          <label for="departamento" class="w-100">
+            <input
+							type="text"
+							required="required"
+							readonly="readonly"
+							name="departamento"
+							id="departamento"
+							placeholder="Nombre"
+							class="form-control"
+							value="<?php echo $datos['departamento']; ?>"
+            />
+          </label>
+        </div>
 
 				<input type="hidden" name="idCiudades" value="<?php echo $datos['idCiudades']; ?>"><br>
 

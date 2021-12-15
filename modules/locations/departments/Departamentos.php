@@ -2,12 +2,12 @@
 
     class Departamentos{
 
-        public $nombre, $usuarioModifica, $fechaCreacion, $fechaModificacion, $pais;
+        public $nombre, $usuarioModifica, $pais;
 
 
         public function __construct(){
             require 'conexion.php';
-            
+            $this->usuarioModifica = "";
         }
 
         public function consultar(){
@@ -22,9 +22,8 @@
         public function guardar(){
             $connect=new Conexion();
             $connect->conectar();
-            $sql = "insert into departamentos (nombre,fechaCreacion ,fechaModificacion, pais) values ('$this->nombre','$this->fechaCreacion','$this->fechaModificacion',$this->pais);";
+            $sql = "insert into departamentos (nombre, usuarioModifica, pais) values ('$this->nombre','$this->usuarioModifica',$this->pais);";
             $resultado = $connect->ejecutar($sql);
-            
 
             $connect->cerrar();
             return $resultado;
@@ -44,13 +43,10 @@
             $connect->conectar();
             $sql = "update departamentos set 
             nombre = '$datos[0]',
-            usuarioModifica = $datos[1],
-            fechaCreacion = '$datos[2]',
-            fechaModificacion = '$datos[3]',
-            pais = $datos[4]
-            where idDepartamentos = $datos[5]";
+            usuarioModifica = '$this->usuarioModifica',
+            pais = $datos[1]
+            where idDepartamentos = $datos[2]";
             $resultado = $connect->ejecutar($sql);
-            echo $sql;
             $connect->cerrar();
             return $resultado;
         }
@@ -59,6 +55,7 @@
             $connect = new Conexion();
             $connect->conectar();
             $sql = "delete from departamentos where idDepartamentos = ".$id;
+            
             $resultado = $connect->ejecutar($sql);
             $connect->cerrar();
             return $resultado;

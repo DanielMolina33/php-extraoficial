@@ -25,5 +25,5 @@ if ($respuesta == 1){
 
 # *************** Redireccionar ***************
 
-	// header('Location: consultaCiudades.php?msn='.$msn);
+	header('Location: consultaCiudades.php?msn='.$msn);
 ?>

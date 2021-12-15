@@ -15,7 +15,7 @@
 <body class="bg-secondary-custom"> 
 	<?php
     require 'Departamentos.php';
-    $id = $_POST['idDepartamentos'];
+    $id = $_GET['idDepartamentos'];
     $pte = new Departamentos();
     $datos = $pte->editar($id);
     $datos = mysqli_fetch_assoc($datos);
@@ -28,35 +28,41 @@
   </div>        
   <section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
     <div class="col-12 col-lg-6 mb-4">
-    	<h3 class="display-4 text-center">Edita departamento</h3>
+    	<h3 class="display-4 text-center">Editar departamento</h3>
     </div>
 
     <div class="col-12 col-lg-6">
     	<form
-				action="newDepartamentos.php"
+				action="actualizarDepartamentos.php"
 				method="POST">
         <div class="mb-3">
-          <label for="total" class="w-100">
+          <label for="nombre" class="w-100">
             <input
-            type="text"
-            required="required"
-        		name="nombre"
-            id="nombre"
-            placeholder="Nombre"
-            class="form-control"
-						value="<?php echo $datos['nombre']; ?>"
+							type="text"
+							required="required"
+							name="nombre"
+							id="nombre"
+							placeholder="Nombre"
+							class="form-control"
+							value="<?php echo $datos['nombre']; ?>"
             />
           </label>
         </div>
 
-				<div class="mb-3">
-					<label for="pais" class="w-100">
-						<select name="pais" required="required" id="pais" class="form-select">
-							<option value="<?php echo $datos['pais']; ?>">Pais</option>
-							<?php require "./consultaPaises.php"; ?>
-						</select>
-					</label>
-				</div>
+        <div class="mb-3">
+          <label for="pais" class="w-100">
+            <input
+							type="text"
+							required="required"
+							readonly="readonly"
+							name="pais"
+							id="pais"
+							placeholder="Pais"
+							class="form-control"
+							value="<?php echo $datos['pais']; ?>"
+            />
+          </label>
+        </div>
 
 				<input type="hidden" name="idDepartamentos" value="<?php echo $datos['idDepartamentos']; ?>"><br>
 

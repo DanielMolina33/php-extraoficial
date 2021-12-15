@@ -34,8 +34,8 @@
 					</div>
 				</div>
 			";
-			if (isset($_POST['msn'])) {
-				echo $_POST['msn'];
+			if (isset($_GET['msn'])) {
+				echo $_GET['msn'];
 			}
 			echo "<br>";
 			echo "<a href=formCiudades.php class='btn d-none' id=add>Agregar nueva ciudad</a>";

@@ -7,10 +7,10 @@
 
 // # *************** Recibe los datos del formulario ***************
 
-	$datos[0] = $_GET['descripcion'];
-	$datos[1] = $_GET['estado'];
-	$datos[2] = $_GET['categoria'];
-	$datos[3] = $_GET['estado'];
+	$datos[0] = $_POST['descripcion'];
+	$datos[1] = $_POST['estado'];
+	$datos[2] = $_POST['categoria'];
+	$datos[3] = $_POST['estado'];
 
 	$general = new Categorias();
 	

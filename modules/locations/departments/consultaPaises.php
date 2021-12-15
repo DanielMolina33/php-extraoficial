@@ -3,7 +3,7 @@
 
   $pte = new Paises();
   $resultado = $pte->consultar();
-  
+
   while($datos = mysqli_fetch_assoc($resultado)){
     $paisId = $datos['idPaises']; 
     $nombrePais = $datos['nombre']; 

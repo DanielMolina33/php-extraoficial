@@ -6,7 +6,7 @@
 	
 # *************** Recibe los datos del formulario ***************
 
-    $id= $_GET['idDepartamentos'];
+  $id= $_GET['idDepartamentos'];
 
 	$general = new Departamentos();
 	
