@@ -71,7 +71,7 @@
         </div>
 
         <div>
-          <input type="reset" value="Borrar" class="btn bg-dark text-white w-100"/>
+          <input type="reset" value="Limpiar" class="btn bg-dark text-white w-100"/>
         </div>
       </form>
     </div>  
