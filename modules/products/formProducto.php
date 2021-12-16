@@ -4,34 +4,150 @@
 	<meta charset="utf-8">
 	<title>Productos	</title>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../css/contentBackground.css">
 	<script type="text/javascript">
 		function volver() {
 			window.history.back();
 		}
 	</script>
 </head>
-<body>             
-	<div class="container">	
-		<h1 class="text-center">Productos</h1>
-		<form action="newProducto.php" method="GET">
-			Digite la referencia <br><input class="m-2" type="text" name="referencia" placeholder="Referencia"><br>
-			Digite el nombre: <br><input class="m-2" type="text" name="nombre" placeholder="Nombre"><br>
-			Digite una descripción: <br><textarea class="m-2" name="descripcion" rows="4" cols="50"></textarea><br>
-			Digite el precio: <br><input class="m-2" type="number" name="precio" placeholder="Precio"><br>
-			Digite el stock: <br><input class="m-2" type="number" name="stock" placeholder="Stock"><br>
-			Digite el color: <br><input class="m-2" type="number" name="color" placeholder="Foranea Color"><br>
-			Digite la talla: <br><input class="m-2" type="number" name="talla" placeholder="Foranea Talla"><br>
-			Digite el usuario modifica: <br><input class="m-2" type="number" name="usuarioModifica" placeholder="Foranea Usuario Modifica"><br>
-			Digite el estado: <br><input class="m-2" type="number" name="estado" placeholder="Foranea Estado"><br>
-			Digite la subcategoría: <br><input class="m-2" type="number" name="subcategoria" placeholder="Foranea Subcategoria"><br>
-			Digite el precio descuento: <br><input class="m-2" type="number" name="precioDescuento" placeholder="Precio descuento"><br>
-			<input class="m-2" type="submit" name="">
-			<input type="button" name="" value="Volver" onclick="volver()">
-		</form><br>
-	</div>
+<body class="bg-secondary-custom">
+	<div class="row justify-content-start mt-5 ms-5">
+			<a href="index.php" title="Atrás" class="fs-4 text-decoration-none">
+				<img src='../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
+			</a>
+		</div>        
+	<section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
+		<div class="col-12 col-lg-6 mb-4">
+			<h3 class="display-4 text-center">Formulario productos</h3>
+		</div>
+
+		<div class="col-12 col-lg-6">
+			<form
+				action="newProducto.php"
+				method="POST">
+				<div class="mb-3">
+					<label for="referencia" class="w-100">
+						<input
+							type="text"
+							required="required"
+							name="referencia"
+							id="referencia"
+							placeholder="Referencia"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="nombre" class="w-100">
+						<input
+							type="text"
+							required="required"
+							name="nombre"
+							id="nombre"
+							placeholder="Nombre"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="descripcion" class="w-100">
+						<textarea
+							type="text"
+							required="required"
+							name="descripcion"
+							id="descripcion"
+							placeholder="Descripción del producto"
+							class="form-control"></textarea>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="precio" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="precio"
+							id="precio"
+							placeholder="Precio"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="stock" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="stock"
+							id="stock"
+							placeholder="Stock"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="color" class="w-100">
+						<select name="color" required="required" id="color" class="form-select">
+							<option value="">Color</option>
+							<?php //require ""; ?>
+						</select>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="talla" class="w-100">
+						<select name="talla" required="required" id="talla" class="form-select">
+							<option value="">Talla</option>
+							<?php //require ""; ?>
+						</select>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="subcategoria" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="subcategoria"
+							id="subcategoria"
+							placeholder="Subcategoria"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="precioDescuento" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="precioDescuento"
+							id="precioDescuento"
+							placeholder="Precio Descuento"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<input type="submit" value="Enviar" class="btn bg-dark text-white w-100"/>
+				</div>
+
+				<div>
+					<input type="reset" value="Borrar" class="btn bg-dark text-white w-100"/>
+				</div>
+			</form>
+		</div>  
+	</section>
 	<?php
-		if(isset($_GET['msn'])){
-			echo $_GET['msn'];
+		if(isset($_POST['msn'])){
+			echo $_POST['msn'];
 		}
 	?>
 </body>

@@ -4,41 +4,163 @@
 	<meta charset="utf-8">
 	<title>Productos</title>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../css/contentBackground.css">
 	<script type="text/javascript">
 		function volver() {
 			window.history.back();
 		}
 	</script>
 </head>
-<body> 
+<body class="bg-secondary-custom"> 
 	<?php
         require 'Producto.php';
-        $id = $_GET['idProductos'];
+        $id = $_POST['idProductos'];
         $pte = new Producto();
         $datos = $pte->editar($id);
         $datos = mysqli_fetch_assoc($datos);
-    ?>             
-	<div class="container">	
-		<h1 class="text-center">Editar Producto</h1>
-		<form action="actualizarProducto.php" method="GET">
-			Digite la referencia <br><input class="m-2" type="text" name="referencia" placeholder="Referencia" value="<?php echo $datos['referencia']; ?>"><br>
-			Digite el nombre: <br><input class="m-2" type="text" name="nombre" placeholder="Nombre" value="<?php echo $datos['nombre']; ?>"><br>
-			Digite una descripción: <br><textarea class="m-2" name="descripcion" rows="4" cols="50"><?php echo $datos['descripcion']; ?></textarea><br>
-			Digite el precio: <br><input class="m-2" type="number" name="precio" placeholder="Precio" value="<?php echo $datos['precio']; ?>"><br>
-			Digite el stock: <br><input class="m-2" type="number" name="stock" placeholder="Stock" value="<?php echo $datos['stock']; ?>"><br>
-			Digite el color: <br><input class="m-2" type="number" name="color" placeholder="Color" value="<?php echo $datos['color']; ?>"><br>
-			Digite la talla: <br><input class="m-2" type="number" name="talla" placeholder="Talla" value="<?php echo $datos['talla']; ?>"><br>
-			Digite el usuario modifica: <br><input class="m-2" type="number" name="usuarioModifica" placeholder="Usuario Modifica" value="<?php echo $datos['usuarioModifica']; ?>"><br>
-			Digite el estado: <br><input class="m-2" type="number" name="estado" placeholder="Estado" value="<?php echo $datos['estado']; ?>"><br>
-			Digite la subcategoría: <br><input class="m-2" type="number" name="subcategoria" placeholder="Subcategoria" value="<?php echo $datos['subcategoria']; ?>"><br>
-			Digite el precio descuento: <br><input class="m-2" type="number" name="precioDescuento" placeholder="Precio descuento" value="<?php echo $datos['precioDescuento']; ?>"><br>
-			<input type="hidden" name="id" value="<?php echo $datos['idProductos']; ?>"><br>
-			<input class="m-2" type="submit" name="">
-		</form><br>
-	</div>
+  ?>             
+	<div class="row justify-content-start mt-5 ms-5">
+		<a href="index.php" title="Atrás" class="fs-4 text-decoration-none">
+			<img src='../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
+		</a>
+	</div>        
+	<section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
+		<div class="col-12 col-lg-6 mb-4">
+			<h3 class="display-4 text-center">Editar producto</h3>
+		</div>
+
+		<div class="col-12 col-lg-6">
+			<form
+				action="actualizarProducto.php"
+				method="POST">
+				<div class="mb-3">
+					<label for="referencia" class="w-100">
+						<input
+							type="text"
+							required="required"
+							name="referencia"
+							id="referencia"
+							placeholder="Referencia"
+							value="<?php echo $datos['referencia']; ?>"
+							class="form-control"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="nombre" class="w-100">
+						<input
+							type="text"
+							required="required"
+							name="nombre"
+							id="nombre"
+							placeholder="Nombre"
+							class="form-control"
+							value="<?php echo $datos['nombre']; ?>"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="descripcion" class="w-100">
+						<textarea
+							type="text"
+							required="required"
+							name="descripcion"
+							id="descripcion"
+							placeholder="Descripción del producto"
+							class="form-control"><?php echo $datos['descripcion']; ?></textarea>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="precio" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="precio"
+							id="precio"
+							placeholder="Precio"
+							class="form-control"
+							value="<?php echo $datos['precio']; ?>"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="stock" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="stock"
+							id="stock"
+							placeholder="Stock"
+							class="form-control"
+							value="<?php echo $datos['stock']; ?>"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="color" class="w-100">
+						<select name="color" required="required" id="color" class="form-select">
+							<option value="">Color</option>
+							<?php //require ""; ?>
+						</select>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="talla" class="w-100">
+						<select name="talla" required="required" id="talla" class="form-select">
+							<option value="">Talla</option>
+							<?php //require ""; ?>
+						</select>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="subcategoria" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="subcategoria"
+							id="subcategoria"
+							placeholder="Subcategoria"
+							class="form-control"
+							value="<?php echo $datos['subcategoria']; ?>"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="precioDescuento" class="w-100">
+						<input
+							type="number"
+							required="required"
+							name="precioDescuento"
+							id="precioDescuento"
+							placeholder="Precio Descuento"
+							class="form-control"
+							value="<?php echo $datos['precioDescuento']; ?>"
+						/>
+					</label>
+				</div>
+
+				<div class="mb-3">
+					<input type="submit" value="Actualizar" class="btn bg-dark text-white w-100"/>
+				</div>
+
+				<div>
+					<input type="reset" value="Borrar" class="btn bg-dark text-white w-100"/>
+				</div>
+			</form>
+		</div>  
+	</section>
 	<?php
-		if(isset($_GET['msn'])){
-			echo $_GET['msn'];
+		if(isset($_POST['msn'])){
+			echo $_POST['msn'];
 		}
 	?>
 </body>

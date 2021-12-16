@@ -67,7 +67,7 @@
 				<input type="hidden" name="idCiudades" value="<?php echo $datos['idCiudades']; ?>"><br>
 
         <div class="mb-3">
-          <input type="submit" value="Enviar" class="btn bg-dark text-white w-100"/>
+          <input type="submit" value="Actualizar" class="btn bg-dark text-white w-100"/>
         </div>
 
         <div>
