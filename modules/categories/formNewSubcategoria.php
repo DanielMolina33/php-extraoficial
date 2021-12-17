@@ -13,7 +13,7 @@
 </head>
 <body class="bg-secondary-custom">             
 	<div class="row justify-content-start mt-5 ms-5">
-		<a href="listas_subcategorias.php" title="Atrás" class="fs-4 text-decoration-none">
+		<a href="index.php" title="Atrás" class="fs-4 text-decoration-none">
 			<img src='img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
 		</a>
 	</div>
