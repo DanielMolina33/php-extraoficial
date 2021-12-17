@@ -11,7 +11,7 @@
 <body class="bg-secondary-custom">
   <div class="offcanvas offcanvas-start offcanvas-width show bg-dark border-0" data-bs-scroll="true" data-bs-backdrop="false" tabindex="1" id="menuOptions" aria-labelledby="menuOptionsLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title text-white display-6" id="menuOptionsLabel">Menu</h5>
+      <h5 class="offcanvas-title text-white display-6" id="menuOptionsLabel">Menú</h5>
     </div>
     <div class="offcanvas-body">
       <div class="mb-2">
@@ -19,7 +19,7 @@
         <ul class="list-group">
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-house me-1"></i>
-            <a href="#" class="text-decoration-none text-white">Home</a>
+            <a href="#" class="text-decoration-none text-white">Inicio</a>
           </li>
           <!-- <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-cart me-1"></i>
