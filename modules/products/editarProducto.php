@@ -106,7 +106,7 @@
 					<label for="color" class="w-100">
 						<select name="color" required="required" id="color" class="form-select">
 							<option value="">Color</option>
-							<?php //require ""; ?>
+							<?php require_once "./consultaColores.php"; obtenerColores($datos['color']); ?>
 						</select>
 					</label>
 				</div>
@@ -115,22 +115,17 @@
 					<label for="talla" class="w-100">
 						<select name="talla" required="required" id="talla" class="form-select">
 							<option value="">Talla</option>
-							<?php //require ""; ?>
+							<?php require_once "./consultaTallas.php"; obtenerTallas($datos['talla']); ?>
 						</select>
 					</label>
 				</div>
 
 				<div class="mb-3">
 					<label for="subcategoria" class="w-100">
-						<input
-							type="number"
-							required="required"
-							name="subcategoria"
-							id="subcategoria"
-							placeholder="Subcategoria"
-							class="form-control"
-							value="<?php echo $datos['subcategoria']; ?>"
-						/>
+						<select name="subcategoria" required="required" id="subcategoria" class="form-select">
+							<option value="">Subcategoria</option>
+							<?php require_once "./consultaSubcategorias.php"; obtenerSubcategorias($datos['subcategoria']); ?>
+						</select>
 					</label>
 				</div>
 
@@ -146,6 +141,20 @@
 							value="<?php echo $datos['precioDescuento']; ?>"
 						/>
 					</label>
+				</div>
+
+				<div class="mb-3">
+          <label for="estado" class="w-100">
+            <select  required="required" id="estado" class="form-select" name="estado">
+              <option value="">Elige un estado</option>
+              <option value="8">Activo</option> 
+              <option value="9">Inactivo</option>
+            </select>
+          </label>
+        </div>
+
+				<div>
+					<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 				</div>
 
 				<div class="mb-3">

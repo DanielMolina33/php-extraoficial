@@ -1,16 +1,22 @@
 <?php
-function conectar(){
-    $host="localhost";
-    $user="root";
-    $pass="";
 
-    $bd="ecommerce";
+	class Conexion{
 
-    $con=mysqli_connect($host,$user,$pass);
+		private $cnx;
 
-    mysqli_select_db($con,$bd);
+		public function conectar(){
+			require 'DatosConexion.php';
+			$this->cnx = new Mysqli($host, $user, $pass, $db);
+		}
 
-    return $con;
-    
-}
+		public function ejecutar($sentencia){
+			$respuesta = $this->cnx->query($sentencia);
+			return $respuesta;
+		}
+
+		public function cerrar(){
+			$this->cnx->close();
+		}
+	}
+
 ?>

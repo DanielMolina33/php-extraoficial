@@ -95,7 +95,7 @@
 					<label for="color" class="w-100">
 						<select name="color" required="required" id="color" class="form-select">
 							<option value="">Color</option>
-							<?php //require ""; ?>
+							<?php require_once "./consultaColores.php"; obtenerColores(); ?>
 						</select>
 					</label>
 				</div>
@@ -104,21 +104,17 @@
 					<label for="talla" class="w-100">
 						<select name="talla" required="required" id="talla" class="form-select">
 							<option value="">Talla</option>
-							<?php //require ""; ?>
+							<?php require_once "./consultaTallas.php"; obtenerTallas(); ?>
 						</select>
 					</label>
 				</div>
 
 				<div class="mb-3">
 					<label for="subcategoria" class="w-100">
-						<input
-							type="number"
-							required="required"
-							name="subcategoria"
-							id="subcategoria"
-							placeholder="Subcategoria"
-							class="form-control"
-						/>
+						<select name="subcategoria" required="required" id="subcategoria" class="form-select">
+							<option value="">Subcategoria</option>
+							<?php require_once "./consultaSubcategorias.php"; obtenerSubcategorias(); ?>
+						</select>
 					</label>
 				</div>
 
@@ -134,6 +130,16 @@
 						/>
 					</label>
 				</div>
+
+				<div class="mb-3">
+          <label for="estado" class="w-100">
+            <select  required="required" id="estado" class="form-select" name="estado">
+              <option selected value="0">Elige un estado</option>
+              <option value="8">Activo</option> 
+              <option value="9">Inactivo</option>
+            </select>
+          </label>
+        </div>
 
 				<div class="mb-3">
 					<input type="submit" value="Enviar" class="btn bg-dark text-white w-100"/>
