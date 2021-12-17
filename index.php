@@ -38,8 +38,12 @@
             <a href="./modules/products/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Productos</a>
           </li>
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
-            <i class="bi bi-shop me-1"></i>
+            <i class="bi bi-boxes"></i>
             <a href="./modules/entities/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Entidades</a>
+          </li>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-chat-right-text"></i>
+            <a href="./modules/comments/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Comentarios</a>
           </li>
         </ul>
       </div>
