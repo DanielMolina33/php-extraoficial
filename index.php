@@ -21,10 +21,10 @@
             <i class="bi bi-house me-1"></i>
             <a href="#" class="text-decoration-none text-white">Home</a>
           </li>
-          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+          <!-- <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-cart me-1"></i>
             <a href="#" class="text-decoration-none text-white">Ordenes de compra</a>
-          </li>
+          </li> -->
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-columns-gap me-1"></i>
             <a href="./modules/categories/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Categorias</a>
@@ -43,7 +43,7 @@
           </li>
         </ul>
       </div>
-      <div class="mb-2">
+      <!-- <div class="mb-2">
         <h6 class="text-white fs-13">Configuración</h6>
         <ul class="list-group">
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
@@ -55,7 +55,7 @@
             <a href="#" class="text-decoration-none text-white">table 2</a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="container-fluid container-no-margin container-offset-right vh-100" id="mainContent">
