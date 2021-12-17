@@ -21,7 +21,7 @@
             <div class="container mt-5">
                     <div class="row"> 
                         
-                        <div class="col-md-3">
+                        <!-- <div class="col-md-3">
                             <h1>Ingrese comentarios</h1>
                                 <form action="insertar.php" method="POST">
 
@@ -31,7 +31,9 @@
 
                                     <input type="submit" class="btn btn-primary">
                                 </form>
-                        </div>
+                        </div> -->
+
+                        <a href="formComments.php">Crear comentario aquí</a>
 
                         <div class="col-md-8">
                             <table class="table" >
