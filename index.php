@@ -37,6 +37,10 @@
             <i class="bi bi-shop me-1"></i>
             <a href="./modules/products/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Productos</a>
           </li>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-shop me-1"></i>
+            <a href="./modules/entities/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Entidades</a>
+          </li>
         </ul>
       </div>
       <div class="mb-2">
