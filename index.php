@@ -11,7 +11,7 @@
 <body class="bg-secondary-custom">
   <div class="offcanvas offcanvas-start offcanvas-width show bg-dark border-0" data-bs-scroll="true" data-bs-backdrop="false" tabindex="1" id="menuOptions" aria-labelledby="menuOptionsLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title text-white display-6" id="menuOptionsLabel">Menu</h5>
+      <h5 class="offcanvas-title text-white display-6" id="menuOptionsLabel">Menú</h5>
     </div>
     <div class="offcanvas-body">
       <div class="mb-2">
@@ -19,12 +19,12 @@
         <ul class="list-group">
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-house me-1"></i>
-            <a href="#" class="text-decoration-none text-white">Home</a>
+            <a href="./modules/home/index.html" class="text-decoration-none text-white" onclick="showContent(event)">Inicio</a>
           </li>
-          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+          <!-- <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-cart me-1"></i>
             <a href="#" class="text-decoration-none text-white">Ordenes de compra</a>
-          </li>
+          </li> -->
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-columns-gap me-1"></i>
             <a href="./modules/categories/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Categorias</a>
@@ -38,12 +38,16 @@
             <a href="./modules/products/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Productos</a>
           </li>
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
-            <i class="bi bi-shop me-1"></i>
+            <i class="bi bi-boxes me-1"></i>
             <a href="./modules/entities/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Entidades</a>
+          </li>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-chat-right-text me-1"></i>
+            <a href="./modules/comments/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Comentarios</a>
           </li>
         </ul>
       </div>
-      <div class="mb-2">
+      <!-- <div class="mb-2">
         <h6 class="text-white fs-13">Configuración</h6>
         <ul class="list-group">
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
@@ -55,7 +59,7 @@
             <a href="#" class="text-decoration-none text-white">table 2</a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="container-fluid container-no-margin container-offset-right vh-100" id="mainContent">
@@ -85,7 +89,7 @@
       </div>
     </header>
     <section class="h-100 w-100">
-      <iframe class="h-100 w-100 m-0" id="iframe">
+      <iframe class="h-100 w-100 m-0" id="iframe" src="./modules/home/index.html">
         <!-- Modules here -->
       </iframe>
     </section>

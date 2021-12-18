@@ -17,13 +17,10 @@
   <section class="container mt-3"> 
     <div class="row">
       <div class="col-12">
-        <h2 class="fs-3 fw-light mb-3">Productos</h2>
+        <h2 class="fs-3 fw-light mb-3">Comentarios</h2>
         <ul class="list-group mb-4 mx-3">
           <li class="list-group-item bg-transparent border-0">
-            <a href="./formProducto.php" class="text-decoration-none d-block text-secondary">Crear</a>
-          </li>
-          <li class="list-group-item bg-transparent border-0">
-            <a href="./consultaProductos.php" class="text-decoration-none d-block text-secondary">Listado</a>
+            <a href="./consultaComentarios.php" class="text-decoration-none d-block text-secondary">Listado</a>
           </li>
         </ul>
       </div>

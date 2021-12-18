@@ -2,13 +2,13 @@
 	
 # *************** Anclar archivos php ***************
 
-	require 'Producto.php';
+	require 'Comentario.php';
 	
 # *************** Recibe los datos del formulario ***************
 
-  $id= $_POST['idProductos'];
+  $id= $_POST['idComentarios'];
 
-	$general = new Producto();
+	$general = new Comentario();
 	
 	$respuesta = $general->eliminar($id);
 
@@ -22,5 +22,5 @@
 
 # *************** Redireccionar ***************
 
-	header('Location: consultaProductos.php?msn='.$msn);
+	header('Location: consultaComentarios.php?msn='.$msn);
 ?>

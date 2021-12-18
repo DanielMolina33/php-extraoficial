@@ -13,11 +13,10 @@
 	$datos[4] = $_POST['stock'];
 	$datos[5] = $_POST['color'];
 	$datos[6] = $_POST['talla'];
-	$datos[7] = $_POST['usuarioModifica'];
-	$datos[8] = $_POST['estado'];
-	$datos[9] = $_POST['subcategoria'];
-	$datos[10] = $_POST['precioDescuento'];
-  $datos[11] = $_POST['id'];
+	$datos[7] = $_POST['subcategoria'];
+	$datos[8] = $_POST['precioDescuento'];
+	$datos[9] = $_POST['estado'];
+  $datos[10] = $_POST['id'];
 
 	$general = new Producto();
 	
@@ -33,5 +32,5 @@ if ($respuesta == 1){
 
 # *************** Redireccionar ***************
 
-	header('Location: index.php?msn='.$msn);
+	header('Location: consultaProductos.php?msn='.$msn);
 ?>
