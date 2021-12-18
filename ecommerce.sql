@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-12-2021 a las 03:25:39
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.8
+-- Tiempo de generación: 18-12-2021 a las 18:05:15
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,7 +89,7 @@ CREATE TABLE `contactos` (
   `fechaCreacion` date NOT NULL DEFAULT current_timestamp(),
   `fechaModificacion` date DEFAULT NULL,
   `usuario` int(11) NOT NULL,
-  `entidad` varchar(5) NOT NULL,
+  `entidad` int(64) NOT NULL,
   `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
@@ -166,7 +166,8 @@ CREATE TABLE `detallefacturas` (
 
 INSERT INTO `detallefacturas` (`idDetalleFacturas`, `idFactura`, `cantidad`, `fechaCreacion`, `producto`) VALUES
 (11, 34, 1, '2021-12-17', 12),
-(13, 36, 1, '2021-12-17', 12);
+(13, 36, 1, '2021-12-17', 12),
+(14, 37, 4, '2021-12-18', 13);
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,7 @@ CREATE TABLE `direcciones` (
   `fechaCreacion` date NOT NULL DEFAULT current_timestamp(),
   `fechaModificacion` date DEFAULT NULL,
   `perfil` int(11) NOT NULL,
-  `entidad` varchar(5) NOT NULL,
+  `entidad` int(64) NOT NULL,
   `tipoVia` int(11) NOT NULL,
   `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
@@ -196,7 +197,7 @@ CREATE TABLE `direcciones` (
 --
 
 CREATE TABLE `entidades` (
-  `idEntidad` varchar(5) NOT NULL,
+  `idEntidad` int(64) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `numeroDocumento` varchar(12) NOT NULL,
   `fechaCreacion` date NOT NULL DEFAULT current_timestamp(),
@@ -212,7 +213,8 @@ CREATE TABLE `entidades` (
 --
 
 INSERT INTO `entidades` (`idEntidad`, `nombre`, `numeroDocumento`, `fechaCreacion`, `fechaModificacion`, `ciudad`, `tipoDocumento`, `usuarioModifica`, `estado`) VALUES
-('EMP', 'Ecommerce', '12345678', '2021-12-12', NULL, 1253, 2, NULL, 8);
+(0, 'prueba', '1007560436', '2021-12-18', NULL, 0, 1, NULL, 8),
+(1, 'Ecommerce', '12345678', '2021-12-12', NULL, 1253, 2, NULL, 8);
 
 -- --------------------------------------------------------
 
@@ -225,7 +227,7 @@ CREATE TABLE `facturas` (
   `total` int(11) NOT NULL,
   `fechaCreacion` date NOT NULL DEFAULT current_timestamp(),
   `perfil` int(11) NOT NULL,
-  `entidad` varchar(5) NOT NULL
+  `entidad` int(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
@@ -233,8 +235,9 @@ CREATE TABLE `facturas` (
 --
 
 INSERT INTO `facturas` (`idFacturas`, `total`, `fechaCreacion`, `perfil`, `entidad`) VALUES
-(34, 0, '2021-12-17', 4, 'EMP'),
-(36, 0, '2021-12-17', 4, 'EMP');
+(34, 0, '2021-12-17', 4, 0),
+(36, 0, '2021-12-17', 4, 0),
+(37, 0, '2021-12-18', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -386,7 +389,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idProductos`, `referencia`, `nombre`, `descripcion`, `precio`, `stock`, `color`, `talla`, `usuarioModifica`, `fechaCreacion`, `fechaModificacion`, `estado`, `subcategoria`, `precioDescuento`) VALUES
-(12, '4343', 'Blusa roja talla S', 'Te sorprenderá su comodidad!', 50000, 4, 21, 26, 0, '2021-12-17', NULL, 8, 1, 0),
+(12, '43431', 'Blusa roja talla S', 'Te sorprenderá su comodidad!', 50000, 4, 21, 26, 0, '2021-12-17', NULL, 8, 1, 0),
 (13, '4344', 'camisa blanca', 'Camisa blanca mujer', 43000, 2, 23, 27, 0, '2021-12-17', NULL, 8, 1, 0);
 
 -- --------------------------------------------------------
@@ -722,13 +725,13 @@ ALTER TABLE `calificaciones`
 -- AUTO_INCREMENT de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
-  MODIFY `idCiudades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1138;
+  MODIFY `idCiudades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1139;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `idComentarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idComentarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `contactos`
@@ -740,13 +743,13 @@ ALTER TABLE `contactos`
 -- AUTO_INCREMENT de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
-  MODIFY `idDepartamentos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `idDepartamentos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de la tabla `detallefacturas`
 --
 ALTER TABLE `detallefacturas`
-  MODIFY `idDetalleFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idDetalleFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `direcciones`
@@ -758,7 +761,7 @@ ALTER TABLE `direcciones`
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `idFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `idFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `fotosproductos`
@@ -788,13 +791,13 @@ ALTER TABLE `pqrsf`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  MODIFY `idSubcategorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idSubcategorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo`
@@ -806,7 +809,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `tipos`
 --
 ALTER TABLE `tipos`
-  MODIFY `idTipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `idTipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -868,94 +871,6 @@ ALTER TABLE `direcciones`
   ADD CONSTRAINT `fk_Direcciones_Perfiles1` FOREIGN KEY (`perfil`) REFERENCES `perfiles` (`idPerfiles`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Direcciones_Tipos1` FOREIGN KEY (`tipoVia`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Direcciones_Tipos2` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `entidades`
---
-ALTER TABLE `entidades`
-  ADD CONSTRAINT `fk_Entidades_Ciudades1` FOREIGN KEY (`ciudad`) REFERENCES `ciudades` (`idCiudades`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Entidades_Tipos1` FOREIGN KEY (`tipoDocumento`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Entidades_Tipos2` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `facturas`
---
-ALTER TABLE `facturas`
-  ADD CONSTRAINT `fk_Facturas_Entidades1` FOREIGN KEY (`entidad`) REFERENCES `entidades` (`idEntidad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Facturas_Perfiles1` FOREIGN KEY (`perfil`) REFERENCES `perfiles` (`idPerfiles`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD CONSTRAINT `fk_Productos_has_Perfiles_Perfiles1` FOREIGN KEY (`idPerfiles`) REFERENCES `perfiles` (`idPerfiles`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Productos_has_Perfiles_Productos1` FOREIGN KEY (`idProductos`) REFERENCES `productos` (`idProductos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `fotosproductos`
---
-ALTER TABLE `fotosproductos`
-  ADD CONSTRAINT `fk_FotosProductos_Productos1` FOREIGN KEY (`producto`) REFERENCES `productos` (`idProductos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_FotosProductos_Tipos1` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `pagos`
---
-ALTER TABLE `pagos`
-  ADD CONSTRAINT `fk_Pagos_Facturas1` FOREIGN KEY (`factura`) REFERENCES `facturas` (`idFacturas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `perfiles`
---
-ALTER TABLE `perfiles`
-  ADD CONSTRAINT `fk_Perfiles_Ciudades1` FOREIGN KEY (`ciudad`) REFERENCES `ciudades` (`idCiudades`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Perfiles_Tipos1` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Perfiles_Tipos2` FOREIGN KEY (`tipoDocumento`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Perfiles_Tipos3` FOREIGN KEY (`genero`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Perfiles_Usuarios1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`idUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `pqrsf`
---
-ALTER TABLE `pqrsf`
-  ADD CONSTRAINT `fk_PQRSF_Tipos1` FOREIGN KEY (`estados`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_PQRSF_Tipos2` FOREIGN KEY (`tipoDocumento`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_PQRSF_Tipos3` FOREIGN KEY (`tipoSolicitud`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD CONSTRAINT `fk_Productos_Subcategorias1` FOREIGN KEY (`subcategoria`) REFERENCES `subcategorias` (`idSubcategorias`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`color`) REFERENCES `tipos` (`idTipos`),
-  ADD CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`talla`) REFERENCES `tipos` (`idTipos`),
-  ADD CONSTRAINT `productos_ibfk_3` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`);
-
---
--- Filtros para la tabla `subcategorias`
---
-ALTER TABLE `subcategorias`
-  ADD CONSTRAINT `fk_Subcategorias_Tipos1` FOREIGN KEY (`categoria`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Subcategorias_Tipos2` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `tipos`
---
-ALTER TABLE `tipos`
-  ADD CONSTRAINT `fk_Tipos_Tipo1` FOREIGN KEY (`tipo`) REFERENCES `tipo` (`idTipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `usuariorol`
---
-ALTER TABLE `usuariorol`
-  ADD CONSTRAINT `fk_Usuarios_has_Tipos_Tipos1` FOREIGN KEY (`idRol`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_Usuarios_has_Tipos_Usuarios1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuarios`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD CONSTRAINT `fk_Usuarios_Tipos1` FOREIGN KEY (`estado`) REFERENCES `tipos` (`idTipos`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
