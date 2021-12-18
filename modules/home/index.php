@@ -15,7 +15,7 @@
 </head>
 <body class="bg-secondary-custom">
   <section class="row mTop">
-    <h1 class="display-5 text-center">Esta pagina aun no está disponible 😅</h1>
+    <h1 class="display-5 text-center">Esta página aún no está completa 😅</h1>
   </section>
 </body>
 </html>

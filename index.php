@@ -19,7 +19,7 @@
         <ul class="list-group">
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-house me-1"></i>
-            <a href="./modules/home/index.html" class="text-decoration-none text-white" onclick="showContent(event)">Inicio</a>
+            <a href="./modules/home/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Inicio</a>
           </li>
           <!-- <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-cart me-1"></i>

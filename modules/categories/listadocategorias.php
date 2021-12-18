@@ -15,9 +15,8 @@
 		echo "<div class=container>";
 			echo "<h1 class=text-center>categorias</h1>";
 			echo "<form action='index.php' method='GET'>
-			<button class=btn>
+			<button class=btn title='Atrás'>
 				<img src='img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
-				<a>Atras</a>
 			</button>";
 			
 			echo "<br>";

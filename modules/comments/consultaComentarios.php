@@ -18,6 +18,11 @@
 		$pte = new Comentario();
 		$resultado = $pte->consultar();
 
+		echo "<div class='row justify-content-start mt-5 ms-5'>
+		<a href='index.php' title='Atrás' class='fs-4 text-decoration-none'>
+			<img src='../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
+		</a>
+  	</div>";
 		echo "<div class=container>";
 			echo "<h1 class=text-center>Listado de Comentarios</h1>";
 			if (isset($_GET['msn'])) {

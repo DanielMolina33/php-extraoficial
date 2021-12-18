@@ -22,6 +22,10 @@
 
 		echo "<div class=container>";
 			echo "<h1 class=text-center>Listado Departamentos</h1>";
+			echo "<form action='../index.php' method='GET'>
+				<button class=btn title='Atrás'>
+					<img src='../../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
+				</button>";
 			echo "
 				<div class='d-flex justify-content-center align-items-center mt-5' id=loader>
 					<div class='spinner-border text-dark' role='status'>
