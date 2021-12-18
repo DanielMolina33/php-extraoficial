@@ -12,13 +12,14 @@
 		}
 	</script>
 </head>
-<body class="bg-secondary-custom">
-	<div class="row justify-content-start mt-5 ms-5">
+<body class="bg-secondary-custom">     
+	<section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
+		<div class="row justify-content-start mt-5 ms-5">
 			<a href="index.php" title="Atrás" class="fs-4 text-decoration-none">
 				<img src='../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
 			</a>
-		</div>        
-	<section class="row h-100 w-100 d-flex flex-column align-items-center m-0 mt-5">
+		</div>   
+
 		<div class="col-12 col-lg-6 mb-4">
 			<h3 class="display-4 text-center">Formulario productos</h3>
 		</div>

@@ -18,8 +18,13 @@
 		$pte = new Producto();
 		$resultado = $pte->consultar();
 
-		echo "<div>";
+		
+		echo "<div class=container>";
 			echo "<h1 class=text-center>Listado de Productos</h1>";
+			echo "<form action='index.php' method='GET'>
+				<button class=btn title='Atrás'>
+					<img src='../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
+				</button>";
 			if (isset($_GET['msn'])) {
 				if(isset($_GET['esComentario'])){
 					echo $_GET['msn'] . " " . "<a href='../comments/consultaComentarios.php' class='text-primary'>Ir a comentarios</a>";
