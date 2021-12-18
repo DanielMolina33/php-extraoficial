@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-12-2021 a las 18:05:15
+-- Tiempo de generación: 18-12-2021 a las 18:35:14
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -213,8 +213,7 @@ CREATE TABLE `entidades` (
 --
 
 INSERT INTO `entidades` (`idEntidad`, `nombre`, `numeroDocumento`, `fechaCreacion`, `fechaModificacion`, `ciudad`, `tipoDocumento`, `usuarioModifica`, `estado`) VALUES
-(0, 'prueba', '1007560436', '2021-12-18', NULL, 0, 1, NULL, 8),
-(1, 'Ecommerce', '12345678', '2021-12-12', NULL, 1253, 2, NULL, 8);
+(0, 'ecommerce', '194194194', '2021-12-18', NULL, 0, 2, NULL, 8);
 
 -- --------------------------------------------------------
 
