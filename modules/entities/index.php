@@ -14,8 +14,7 @@
 					dataType : 'html',
 					success: function(response) {
 						alert('Registro eliminado con exito');
-						location.reload();
-						
+						location.href = "index.php?msn=<font color = green>Registro eliminado exitosamente.</font>";
 					},
 					error : function(response) {
 						alert('Error eliminando registro');
