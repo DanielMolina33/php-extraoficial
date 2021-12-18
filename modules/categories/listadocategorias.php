@@ -28,11 +28,11 @@
 					<th>IdCategorias</th>
 					<th>nombre</th>
 					<th>Estado</th>
-					<th>usuario a modificar</th>
+					<th>usuario modifica</th>
 					<th>fecha creacion</th>
 					<th>fecha modifica</th>
 					<th>IDtipo</th>
-					<th>elimar</th>
+					<th>eliminar</th>
 					
 				</tr>";
 

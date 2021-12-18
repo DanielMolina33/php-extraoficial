@@ -8,6 +8,7 @@
 
 	$datos[0] = $_POST['descripcion'];
 	$datos[1] = $_POST['idProductos'];
+	$datos[2] = $_POST['perfil'];
 
 # *************** Se crea la instancia (objeto) de la clase Paciente ***************
 
@@ -17,6 +18,7 @@ $general = new Comentario();
 
  	$general -> descripcion = $datos[0];
 	$general -> producto = $datos[1];
+	$general -> perfil = $datos[2];
 
 	$respuesta = $general -> guardar();
 

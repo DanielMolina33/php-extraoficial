@@ -24,12 +24,12 @@
 					<th>#</th>
 					<th>Id</th>
 					<th>nombre</th>
-					<th>usuario creador</th>
+					<th>usuario modifica</th>
 					<th>fecha creacion</th>
 					<th>fecha modifica</th>
 					<th>Categoria</th>
 					<th>estado</th>
-					<th>elimar</th>
+					<th>eliminar</th>
 				</tr>";
 
 			while ($datos = mysqli_fetch_assoc($result)){

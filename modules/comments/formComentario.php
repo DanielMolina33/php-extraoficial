@@ -17,7 +17,7 @@
 		$productoId = $_GET['idProductos'];
 	?>
 	<div class="row justify-content-start mt-5 ms-5">
-			<a href="index.php" title="Atrás" class="fs-4 text-decoration-none">
+			<a href="../products/consultaProductos.php" title="Atrás" class="fs-4 text-decoration-none">
 				<img src='../../img/1486348529-back-backwards-repeat-arrows-arrow_80455 (1).ico' width=30px/>
 			</a>
 		</div>        
@@ -33,6 +33,15 @@
 				<div class="form-floating mb-3">
 					<textarea class="form-control" placeholder="Escribe tu comentario" name="descripcion" id="descripcion"></textarea>
 					<label for="descripcion" class="text-secondary">Escribe tu comentario</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="perfil" class="w-100">
+						<select name="perfil" required="required" id="perfil" class="form-select">
+							<option value="">Perfil</option>
+							<?php require_once "./consultaPerfiles.php"; ?>
+						</select>
+					</label>
 				</div>
 
 				<div>

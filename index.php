@@ -38,6 +38,10 @@
             <a href="./modules/products/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Productos</a>
           </li>
           <li class="list-group-item border-0 bg-transparent fs-14 text-white">
+            <i class="bi bi-cart-check me-1"></i>
+            <a href="./modules/sales/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Ventas</a>
+          </li>
+          <li class="list-group-item border-0 bg-transparent fs-14 text-white">
             <i class="bi bi-boxes me-1"></i>
             <a href="./modules/entities/index.php" class="text-decoration-none text-white" onclick="showContent(event)">Entidades</a>
           </li>
@@ -89,7 +93,7 @@
       </div>
     </header>
     <section class="h-100 w-100">
-      <iframe class="h-100 w-100 m-0" id="iframe" src="./modules/home/index.html">
+      <iframe class="h-100 w-100 m-0" id="iframe">
         <!-- Modules here -->
       </iframe>
     </section>

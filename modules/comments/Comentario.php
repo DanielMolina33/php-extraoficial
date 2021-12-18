@@ -6,7 +6,6 @@
 
     public function __construct(){
       require 'conexion.php';
-      $this->perfil = 4;
     }
 
     public function consultar(){

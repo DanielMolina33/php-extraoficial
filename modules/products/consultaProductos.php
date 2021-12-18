@@ -18,18 +18,20 @@
 		$pte = new Producto();
 		$resultado = $pte->consultar();
 
-		echo "<div class=container>";
+		echo "<div>";
 			echo "<h1 class=text-center>Listado de Productos</h1>";
 			if (isset($_GET['msn'])) {
 				if(isset($_GET['esComentario'])){
 					echo $_GET['msn'] . " " . "<a href='../comments/consultaComentarios.php' class='text-primary'>Ir a comentarios</a>";
+				} else if(isset($_GET['esFactura'])){
+					echo $_GET['msn'] . " " . "<a href='../sales/views/bills/billsList_view.php' class='text-primary'>Ir a facturas</a>";
 				} else {
 					echo $_GET['msn'];
 				}
 			}
 			echo "<br>";
 			echo "<a href=formProducto.php class=btn>Agregar nuevo Producto</a>";
-			echo "<table border=1 class=table>";
+			echo "<table border=1 class='table m-auto w-50'>";
 			echo "<tr>
 					<th>IdProducto</th>
 					<th>Referencia</th>
@@ -40,15 +42,32 @@
 					<th>Fecha creación</th>
 					<th>Fecha modifica</th>
 					<th>Precio descuento</th>
+					<th>Facturar</th>
+					<th>Comentar</th>
 					<th>Editar</th>
 					<th>Eliminar</th>
 				</tr>";
 
 			while ($datos = mysqli_fetch_assoc($resultado)){
+				$idProductos = $datos['idProductos'];
+				$productoNombre = $datos['nombre'];
+				$productoPrecio = $datos['precio'];
+
 				echo "<tr class='bg-transparent'>";
 					foreach ($datos as $key => $value) {
 						echo "<td>".$value."</td>";
 					}
+
+					echo "<td>
+						<form action='../sales/views/bills/newBill_view.php' method='GET'>
+							<input type='hidden' name='idProductos' value='$idProductos'>
+							<input type='hidden' name='productoNombre' value='$productoNombre'/>
+							<input type='hidden' name='productoPrecio' value='$productoPrecio'/>
+							<button title='Facturar' class=btn>
+								<img src='../../img/bill.png' width=30px/>
+							</button>
+						</form>
+						</td>";
 					echo "<td>
 						<form action='../comments/formComentario.php' method='GET'>
 							<input type=hidden name=idProductos value= ".$datos['idProductos'].">
