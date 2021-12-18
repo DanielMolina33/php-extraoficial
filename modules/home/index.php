@@ -16,6 +16,8 @@
 <body class="bg-secondary-custom">
   <section class="row mTop">
     <h1 class="display-5 text-center">Esta página aún no está completa 😅</h1>
+    <br><br><br><br>
+    <p>En está página podrás encontrar algunos módulos que vamos a requerir en el ecommerce; En la parte superior izquierda se encuentra el menú con los módulos trabajados en esta ocasión. Aún NO es un producto final, sino una posible guía en el desarrollo oficial que el equipo desarrollador del ADSI194 se encuentra realizando.</p>
   </section>
 </body>
 </html>
