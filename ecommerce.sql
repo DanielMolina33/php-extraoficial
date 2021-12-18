@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-12-2021 a las 18:35:14
+-- Tiempo de generación: 18-12-2021 a las 18:47:42
 -- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Versión de PHP: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ecommerce`
+-- Base de datos: `ecommerce2`
 --
 
 -- --------------------------------------------------------
@@ -166,8 +166,7 @@ CREATE TABLE `detallefacturas` (
 
 INSERT INTO `detallefacturas` (`idDetalleFacturas`, `idFactura`, `cantidad`, `fechaCreacion`, `producto`) VALUES
 (11, 34, 1, '2021-12-17', 12),
-(13, 36, 1, '2021-12-17', 12),
-(14, 37, 4, '2021-12-18', 13);
+(13, 36, 1, '2021-12-17', 12);
 
 -- --------------------------------------------------------
 
@@ -202,7 +201,7 @@ CREATE TABLE `entidades` (
   `numeroDocumento` varchar(12) NOT NULL,
   `fechaCreacion` date NOT NULL DEFAULT current_timestamp(),
   `fechaModificacion` date DEFAULT NULL,
-  `ciudad` int(11) NOT NULL,
+  `ciudad` int(11) DEFAULT NULL,
   `tipoDocumento` int(11) NOT NULL,
   `usuarioModifica` int(11) DEFAULT NULL,
   `estado` int(11) NOT NULL
@@ -213,7 +212,9 @@ CREATE TABLE `entidades` (
 --
 
 INSERT INTO `entidades` (`idEntidad`, `nombre`, `numeroDocumento`, `fechaCreacion`, `fechaModificacion`, `ciudad`, `tipoDocumento`, `usuarioModifica`, `estado`) VALUES
-(0, 'ecommerce', '194194194', '2021-12-18', NULL, 0, 2, NULL, 8);
+(1, 'Fashion Cali ', '121313', '2021-12-18', NULL, NULL, 1, NULL, 8),
+(2, 'pruebas', '121313', '2021-12-18', NULL, NULL, 1, NULL, 8),
+(3, 'Fashion Dama', '21446464', '2021-12-18', NULL, NULL, 2, NULL, 8);
 
 -- --------------------------------------------------------
 
@@ -235,8 +236,7 @@ CREATE TABLE `facturas` (
 
 INSERT INTO `facturas` (`idFacturas`, `total`, `fechaCreacion`, `perfil`, `entidad`) VALUES
 (34, 0, '2021-12-17', 4, 0),
-(36, 0, '2021-12-17', 4, 0),
-(37, 0, '2021-12-18', 4, 0);
+(36, 0, '2021-12-17', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -388,7 +388,7 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`idProductos`, `referencia`, `nombre`, `descripcion`, `precio`, `stock`, `color`, `talla`, `usuarioModifica`, `fechaCreacion`, `fechaModificacion`, `estado`, `subcategoria`, `precioDescuento`) VALUES
-(12, '43431', 'Blusa roja talla S', 'Te sorprenderá su comodidad!', 50000, 4, 21, 26, 0, '2021-12-17', NULL, 8, 1, 0),
+(12, '4343', 'Blusa roja talla S', 'Te sorprenderá su comodidad!', 50000, 4, 21, 26, 0, '2021-12-17', NULL, 8, 1, 0),
 (13, '4344', 'camisa blanca', 'Camisa blanca mujer', 43000, 2, 23, 27, 0, '2021-12-17', NULL, 8, 1, 0);
 
 -- --------------------------------------------------------
@@ -602,7 +602,7 @@ ALTER TABLE `direcciones`
 -- Indices de la tabla `entidades`
 --
 ALTER TABLE `entidades`
-  ADD PRIMARY KEY (`idEntidad`) USING BTREE,
+  ADD PRIMARY KEY (`idEntidad`),
   ADD KEY `fk_Entidades_Ciudades1_idx` (`ciudad`) USING BTREE,
   ADD KEY `fk_Entidades_Tipos1_idx` (`tipoDocumento`) USING BTREE,
   ADD KEY `fk_Entidades_Tipos2_idx` (`estado`) USING BTREE;
@@ -724,13 +724,13 @@ ALTER TABLE `calificaciones`
 -- AUTO_INCREMENT de la tabla `ciudades`
 --
 ALTER TABLE `ciudades`
-  MODIFY `idCiudades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1139;
+  MODIFY `idCiudades` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1138;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `idComentarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `idComentarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `contactos`
@@ -742,13 +742,13 @@ ALTER TABLE `contactos`
 -- AUTO_INCREMENT de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
-  MODIFY `idDepartamentos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `idDepartamentos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `detallefacturas`
 --
 ALTER TABLE `detallefacturas`
-  MODIFY `idDetalleFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idDetalleFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `direcciones`
@@ -757,10 +757,16 @@ ALTER TABLE `direcciones`
   MODIFY `idDirecciones` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `entidades`
+--
+ALTER TABLE `entidades`
+  MODIFY `idEntidad` int(64) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `idFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `idFacturas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `fotosproductos`
@@ -790,13 +796,13 @@ ALTER TABLE `pqrsf`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idProductos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  MODIFY `idSubcategorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idSubcategorias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo`
@@ -808,7 +814,7 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de la tabla `tipos`
 --
 ALTER TABLE `tipos`
-  MODIFY `idTipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `idTipos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
